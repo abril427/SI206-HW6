@@ -79,13 +79,7 @@ def access_third_elem(seq):
     return seq[2]
 ## End
 
-# Write your equivalent function and assignment statement here
-# main_list = [1, 2, 3]
-# indexes = [2]
-# def sample_func(main_list):
-#     indexes = [2]
-#     index_object = map(lambda x:main_list[x],indexes)
-#     return(sample_func)
+sample_func = (lambda x: access_third_elem(x)) 
 
 ## [PROBLEM 4]
 print("\n\n***** Problem 4 *****")
@@ -236,11 +230,11 @@ class Problem2(unittest.TestCase):
                 return 0.2
         self.assertEqual(personal_map(complex,[9,3,1,0]),[14,0.2,"small","small"])
 
-# class Problem3(unittest.TestCase):
-#     def test_sample_func(self):
-#         self.assertEqual(sample_func([1,2,3]),3)
-#     def test_sample_func2(self):
-#         self.assertEqual(sample_func([0,3243,2343,23,342,23432,23423,43235,2343]),2343)
+class Problem3(unittest.TestCase):
+    def test_sample_func(self):
+        self.assertEqual(sample_func([1,2,3]),3)
+    def test_sample_func2(self):
+        self.assertEqual(sample_func([0,3243,2343,23,342,23432,23423,43235,2343]),2343)
 
 class Problem4(unittest.TestCase):
     def test_student_tups_iterator(self):
