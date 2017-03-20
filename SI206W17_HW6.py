@@ -32,7 +32,7 @@ class Student():
 
     # Define the additional method here
     def write_programs(self, input=1):
-        self.num_programs +=input
+        self.num_programs += input
     
 
 #### DONE WITH STUDENT CLASS DEFINITION
