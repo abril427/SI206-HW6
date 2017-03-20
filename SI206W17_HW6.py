@@ -110,8 +110,9 @@ student_tups_list = list(student_tups)
 ## [PROBLEM 5]
 print("\n\n***** Problem 5 *****")
 # Use a list comprehension to create a list of Student instances out of the student_tups list you just created in Problem 2, and save that list in a variable called programmers. You should make sure you pass these tests before continuing, as you'll need this list for problems later on!
+programmers = [Student(name, seniority, programs_written) for ((name, seniority, programs_written)) in student_tups_list] 
 
-
+# print(programmers[0][0])
 
 ## [PROBLEM 6]
 print("\n\n***** Problem 6 *****")
@@ -216,11 +217,11 @@ class Problem2(unittest.TestCase):
                 return 0.2
         self.assertEqual(personal_map(complex,[9,3,1,0]),[14,0.2,"small","small"])
 
-class Problem3(unittest.TestCase):
-    def test_sample_func(self):
-        self.assertEqual(sample_func([1,2,3]),3)
-    def test_sample_func2(self):
-        self.assertEqual(sample_func([0,3243,2343,23,342,23432,23423,43235,2343]),2343)
+# class Problem3(unittest.TestCase):
+#     def test_sample_func(self):
+#         self.assertEqual(sample_func([1,2,3]),3)
+#     def test_sample_func2(self):
+#         self.assertEqual(sample_func([0,3243,2343,23,342,23432,23423,43235,2343]),2343)
 
 class Problem4(unittest.TestCase):
     def test_student_tups_iterator(self):
@@ -228,13 +229,13 @@ class Problem4(unittest.TestCase):
     def test_student_tups_list(self):
         self.assertEqual(student_tups_list,[('Albert', 1, 10), ('Bisi', 5, 500), ('Mai', 2, 20), ('Dinesh', 4, 131), ('Euijin', 3, 46)])
 
-# class Problem5(unittest.TestCase):
-#     def test_programmers_list(self):
-#         self.assertEqual(type(programmers),type([]))
-#     def test_programmers_list2(self):
-#         self.assertEqual(type(programmers[2]),type(Student("Jess")))
-#     def test_programmers_list3(self):
-#         self.assertEqual([x.name for x in programmers],["Albert","Bisi","Mai","Dinesh","Euijin"])
+class Problem5(unittest.TestCase):
+    def test_programmers_list(self):
+        self.assertEqual(type(programmers),type([]))
+    def test_programmers_list2(self):
+        self.assertEqual(type(programmers[2]),type(Student("Jess")))
+    def test_programmers_list3(self):
+        self.assertEqual([x.name for x in programmers],["Albert","Bisi","Mai","Dinesh","Euijin"])
 
 # class Problem6(unittest.TestCase):
 #     def test_prod_iter(self):
