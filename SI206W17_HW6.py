@@ -59,7 +59,11 @@ print("\n\n***** Problem 2 *****")
 ## HINT: you should be able to write this in 5 lines of code or fewer! 
 
 
-
+def personal_map(func, lst):
+    new_lst = []
+    for item in lst:
+        new_lst.append(func(item))
+    return new_lst
 
 
 
