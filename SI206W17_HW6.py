@@ -80,7 +80,12 @@ def access_third_elem(seq):
 ## End
 
 # Write your equivalent function and assignment statement here
-
+# main_list = [1, 2, 3]
+# indexes = [2]
+# def sample_func(main_list):
+#     indexes = [2]
+#     index_object = map(lambda x:main_list[x],indexes)
+#     return(sample_func)
 
 ## [PROBLEM 4]
 print("\n\n***** Problem 4 *****")
@@ -92,10 +97,11 @@ programs_written = [10, 500, 20, 131, 46]
 ## End provided code
 
 # Given that provided code, write one line of code to create a zip iterator instance saved in a variable called student_tups, here:
+student_tups = zip(names, seniority, programs_written)
 
 
 # Then write a line of code to cast the iterator to a list (it should end up as a list of tuples). Save that list in a variable called student_tups_list.
-
+student_tups_list = list(student_tups)
 
 ## You can test this out with any code you like here, and similar below other problems, but make sure to comment out any code that uses up the iterator in order to pass the tests!
     
@@ -210,17 +216,17 @@ class Problem2(unittest.TestCase):
                 return 0.2
         self.assertEqual(personal_map(complex,[9,3,1,0]),[14,0.2,"small","small"])
 
-# class Problem3(unittest.TestCase):
-#     def test_sample_func(self):
-#         self.assertEqual(sample_func([1,2,3]),3)
-#     def test_sample_func2(self):
-#         self.assertEqual(sample_func([0,3243,2343,23,342,23432,23423,43235,2343]),2343)
+class Problem3(unittest.TestCase):
+    def test_sample_func(self):
+        self.assertEqual(sample_func([1,2,3]),3)
+    def test_sample_func2(self):
+        self.assertEqual(sample_func([0,3243,2343,23,342,23432,23423,43235,2343]),2343)
 
-# class Problem4(unittest.TestCase):
-#     def test_student_tups_iterator(self):
-#         self.assertEqual(type(student_tups),type(zip([1,2],[3,4])))
-#     def test_student_tups_list(self):
-#         self.assertEqual(student_tups_list,[('Albert', 1, 10), ('Bisi', 5, 500), ('Mai', 2, 20), ('Dinesh', 4, 131), ('Euijin', 3, 46)])
+class Problem4(unittest.TestCase):
+    def test_student_tups_iterator(self):
+        self.assertEqual(type(student_tups),type(zip([1,2],[3,4])))
+    def test_student_tups_list(self):
+        self.assertEqual(student_tups_list,[('Albert', 1, 10), ('Bisi', 5, 500), ('Mai', 2, 20), ('Dinesh', 4, 131), ('Euijin', 3, 46)])
 
 # class Problem5(unittest.TestCase):
 #     def test_programmers_list(self):
