@@ -110,9 +110,9 @@ student_tups_list = list(student_tups)
 ## [PROBLEM 5]
 print("\n\n***** Problem 5 *****")
 # Use a list comprehension to create a list of Student instances out of the student_tups list you just created in Problem 2, and save that list in a variable called programmers. You should make sure you pass these tests before continuing, as you'll need this list for problems later on!
-programmers = [Student(name, seniority, programs_written) for ((name, seniority, programs_written)) in student_tups_list] 
+programmers = [Student(name, seniority, programs_written) for (name, seniority, programs_written) in student_tups_list] 
 
-# print(programmers[0][0])
+print(programmers)
 
 ## [PROBLEM 6]
 print("\n\n***** Problem 6 *****")
@@ -124,7 +124,8 @@ print("\n\n***** Problem 6 *****")
 ## Write code to cast that iterator to a list. Save that list in the variable prod_list.
 
 ## You may add a method to the Student class if you wish in order to do this, but you do not need to. (If you do, make sure you do not create any syntax errors that keep code/tests from running!)
-
+prod_iter = map((lambda programmer: programmer.num_programs/programmer.years_UM), programmers)
+prod_list = list(prod_iter)
 
 
 ## [PROBLEM 7]
@@ -237,25 +238,25 @@ class Problem5(unittest.TestCase):
     def test_programmers_list3(self):
         self.assertEqual([x.name for x in programmers],["Albert","Bisi","Mai","Dinesh","Euijin"])
 
-# class Problem6(unittest.TestCase):
-#     def test_prod_iter(self):
-#         self.assertEqual(type(prod_iter),type(map(lambda x:-x,[2,3])))
-#     def test_prod_list(self):
-#         self.assertEqual(prod_list,[10.0,100.0,10.0,32.75,15.333333333333334])
+class Problem6(unittest.TestCase):
+    def test_prod_iter(self):
+        self.assertEqual(type(prod_iter),type(map(lambda x:-x,[2,3])))
+    def test_prod_list(self):
+        self.assertEqual(prod_list,[10.0,100.0,10.0,32.75,15.333333333333334])
 
-# class Problem7(unittest.TestCase):
-#     def test_names_and_productivities(self):
-#         self.assertEqual(names_and_productivities,[('Albert', 10.0), ('Bisi', 100.0), ('Mai', 10.0), ('Dinesh', 32.75), ('Euijin', 15.333333333333334)])
+class Problem7(unittest.TestCase):
+    def test_names_and_productivities(self):
+        self.assertEqual(names_and_productivities,[('Albert', 10.0), ('Bisi', 100.0), ('Mai', 10.0), ('Dinesh', 32.75), ('Euijin', 15.333333333333334)])
 
-# class Problem8(unittest.TestCase):
-#     def test_long_names(self):
-#         self.assertEqual(type(filter(lambda x: x>2,[2,5])),type(long_names))
-#     def test_long_names_list(self):
-#         self.assertEqual(type(long_names_list),type([]))
-#     def test_long_names_list_instances(self):
-#         self.assertEqual(type(long_names_list[1]),type(Student("Dinah")))
-#     def test_long_names_list2(self):
-#         self.assertEqual([x.name for x in long_names_list],["Albert","Dinesh","Euijin"])
+class Problem8(unittest.TestCase):
+    def test_long_names(self):
+        self.assertEqual(type(filter(lambda x: x>2,[2,5])),type(long_names))
+    def test_long_names_list(self):
+        self.assertEqual(type(long_names_list),type([]))
+    def test_long_names_list_instances(self):
+        self.assertEqual(type(long_names_list[1]),type(Student("Dinah")))
+    def test_long_names_list2(self):
+        self.assertEqual([x.name for x in long_names_list],["Albert","Dinesh","Euijin"])
 
 # class Problem9(unittest.TestCase):
 #     def test_names_without_much_seniority(self):
